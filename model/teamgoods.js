@@ -27,6 +27,11 @@ class TeamGoods extends Model {
                     type: DataTypes.INTEGER,
                     allowNull: false,
                     comment: '商品数量'
+                },
+                goodsScore:{
+                    type: DataTypes.INTEGER,
+                    allowNull: false,
+                    comment: '商品积分'
                 }
             },
             { 

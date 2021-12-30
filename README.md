@@ -12,6 +12,7 @@
 团队成员表 TeamMember
 团队商品表 TeamGoods
 团队商品兑换表 GoodsConvert
+团队成员积分记录表 TeamMemberScore
 
 
 活动

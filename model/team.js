@@ -12,6 +12,16 @@ class Team extends Model {
                     type: DataTypes.STRING,
                     allowNull: false,
                     comment: '团队名'
+                },
+                teamInfo:{
+                    type: DataTypes.STRING,
+                    allowNull: false,
+                    comment: '团队详情'
+                },
+                teamLogo:{
+                    type: DataTypes.STRING,
+                    allowNull: false,
+                    comment: '团队logo'
                 }
             },
             { 
@@ -24,9 +34,9 @@ class Team extends Model {
             }
         )
     }
-    static associate(models){
-        models.Team.hasOne(models.TeamInfo)
-    }
+    // static associate(models){
+        
+    // }
 }
 
 module.exports = Team

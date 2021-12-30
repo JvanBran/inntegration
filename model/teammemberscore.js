@@ -1,5 +1,5 @@
 const {Sequelize,Model,DataTypes} = require('sequelize')
-class TeamInfo extends Model {
+class TeamMemberScore extends Model {
     static init(sequelize){
         return super.init(
             {
@@ -8,15 +8,17 @@ class TeamInfo extends Model {
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
                 },
-                teamInfo:{
-                    type: DataTypes.STRING,
+                scoreType:{
+                    type: DataTypes.INTEGER,
                     allowNull: false,
-                    comment: '团队详情'
+                    defaultValue: 0,
+                    comment: '用户类型 1增加 2减少 3管理员赠送 4其他'
                 },
-                teamLogo:{
-                    type: DataTypes.STRING,
+                score:{
+                    type: DataTypes.INTEGER,
                     allowNull: false,
-                    comment: '团队logo'
+                    defaultValue: 0,
+                    comment: '积分值'
                 }
             },
             { 
@@ -24,14 +26,14 @@ class TeamInfo extends Model {
                 freezeTableName: true,
                 timestamps: true,
                 paranoid: true,
-                modelName: 'TeamInfo', 
-                comment: "团队信息"
+                modelName: 'TeamMemberScore', 
+                comment: "团队成员积分记录信息"
             }
         )
     }
     static associate(models){
-        models.TeamInfo.belongsTo(models.Team)
+        models.TeamMemberScore.belongsTo(models.TeamMember)
     }
 }
 
-module.exports = TeamInfo
+module.exports = TeamMemberScore
