@@ -8,6 +8,11 @@ class UserInfo extends Model {
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
                 },
+                nickname:{
+                    type: DataTypes.STRING,
+                    allowNull: false,
+                    comment: '用户昵称'
+                },
                 phone:{
                     type: DataTypes.STRING,
                     allowNull: false,
@@ -23,24 +28,6 @@ class UserInfo extends Model {
                     allowNull: false,
                     defaultValue: 0,
                     comment: '第三方标识'
-                },
-                userStatus:{
-                    type: DataTypes.INTEGER,
-                    allowNull: false,
-                    defaultValue: 0,
-                    comment: '账号状态'
-                },
-                wxOpenId:{
-                    type: DataTypes.STRING,
-                    allowNull: false,
-                    defaultValue: 0,
-                    comment: '微信openid'
-                },
-                wxUnionId:{
-                    type: DataTypes.STRING,
-                    allowNull: false,
-                    defaultValue: 0,
-                    comment: '微信unionId'
                 }
             },
             { 

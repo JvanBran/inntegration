@@ -13,15 +13,28 @@ class User extends Model {
                     allowNull: false,
                     comment: '用户名'
                 },
-                nickname:{
-                    type: DataTypes.STRING,
-                    allowNull: false,
-                    comment: '用户昵称'
-                },
                 password:{
                     type: DataTypes.STRING,
                     allowNull: false,
                     comment: '用户密码'
+                },
+                userStatus:{
+                    type: DataTypes.INTEGER,
+                    allowNull: false,
+                    defaultValue: 0,
+                    comment: '账号状态'
+                },
+                wxOpenId:{
+                    type: DataTypes.STRING,
+                    allowNull: false,
+                    defaultValue: 0,
+                    comment: '微信openid'
+                },
+                wxUnionId:{
+                    type: DataTypes.STRING,
+                    allowNull: false,
+                    defaultValue: 0,
+                    comment: '微信unionId'
                 }
             },
             { 

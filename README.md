@@ -7,7 +7,6 @@
 用户信息表 UserInfo
 用户地址表 UserAddr
 团队表 Team
-团队信息表 TeamInfo
 团队管理员表 TeamAdmin
 团队成员表 TeamMember
 团队商品表 TeamGoods
@@ -21,7 +20,6 @@
 
 用户表 1:1 用户信息表
 用户表 1:N 用户地址表
-团队表 1:1 团队信息表
 
 团队表 1:N 团队管理员表 N:1用户表 
 团队表 1:N 团队成员表 N:1 用户表 
