@@ -1,5 +1,5 @@
 const {Sequelize,Model,DataTypes} = require('sequelize')
-class User extends Model {
+class TeamGoods extends Model {
     static init(sequelize){
         return super.init(
             {
@@ -8,20 +8,25 @@ class User extends Model {
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
                 },
-                name:{
+                goodsname:{
                     type: DataTypes.STRING,
                     allowNull: false,
-                    comment: '用户名'
+                    comment: '商品信息'
                 },
-                nickname:{
+                goodspicture:{
                     type: DataTypes.STRING,
                     allowNull: false,
-                    comment: '用户昵称'
+                    comment: '商品照片'
                 },
-                password:{
+                goodstitle:{
                     type: DataTypes.STRING,
                     allowNull: false,
-                    comment: '用户密码'
+                    comment: '商品标题'
+                },
+                goodsamount:{
+                    type: DataTypes.INTEGER,
+                    allowNull: false,
+                    comment: '商品数量'
                 }
             },
             { 
@@ -29,16 +34,14 @@ class User extends Model {
                 freezeTableName: true,
                 timestamps: true,
                 paranoid: true,
-                modelName: 'User', 
-                comment: "用户信息"
+                modelName: 'TeamGoods', 
+                comment: "团队商品信息"
             }
         )
     }
     static associate(models){
-        models.User.hasOne(models.UserInfo)
-        models.User.hasMany(models.UserAddr)
-        models.User.hasMany(models.TeamAdmin)
+        models.TeamGoods.belongsTo(models.Team)
     }
 }
 
-module.exports = User
+module.exports = TeamGoods

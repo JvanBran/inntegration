@@ -3,10 +3,11 @@ const sequelize = new Sequelize('integration','root','123456',{
     host: '172.18.5.173',
     port: '3306',
     dialect:'mysql',
-    logging: false,
+    logging: log,
     dialectOptions: {
         charset: "utf8",
-        bigNumberStrings: true
+        bigNumberStrings: true,
+        connectTimeout: 20000
     },
     pool: {
         max: 5,
@@ -16,4 +17,7 @@ const sequelize = new Sequelize('integration','root','123456',{
     },
     timezone: '+08:00' //东八时区
 });
+function log(sql,detail){
+    // console.log(sql,detail);
+}
 module.exports = sequelize

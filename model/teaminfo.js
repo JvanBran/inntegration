@@ -1,5 +1,5 @@
 const {Sequelize,Model,DataTypes} = require('sequelize')
-class User extends Model {
+class TeamInfo extends Model {
     static init(sequelize){
         return super.init(
             {
@@ -8,20 +8,15 @@ class User extends Model {
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
                 },
-                name:{
+                teamInfo:{
                     type: DataTypes.STRING,
                     allowNull: false,
-                    comment: '用户名'
+                    comment: '团队详情'
                 },
-                nickname:{
+                teamLogo:{
                     type: DataTypes.STRING,
                     allowNull: false,
-                    comment: '用户昵称'
-                },
-                password:{
-                    type: DataTypes.STRING,
-                    allowNull: false,
-                    comment: '用户密码'
+                    comment: '团队logo'
                 }
             },
             { 
@@ -29,16 +24,14 @@ class User extends Model {
                 freezeTableName: true,
                 timestamps: true,
                 paranoid: true,
-                modelName: 'User', 
-                comment: "用户信息"
+                modelName: 'TeamInfo', 
+                comment: "团队信息"
             }
         )
     }
     static associate(models){
-        models.User.hasOne(models.UserInfo)
-        models.User.hasMany(models.UserAddr)
-        models.User.hasMany(models.TeamAdmin)
+        models.TeamInfo.belongsTo(models.Team)
     }
 }
 
-module.exports = User
+module.exports = TeamInfo
