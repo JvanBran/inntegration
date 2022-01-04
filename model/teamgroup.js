@@ -1,5 +1,5 @@
 const {Sequelize,Model,DataTypes} = require('sequelize')
-class GoodsConvert extends Model {
+class TeamGroup extends Model {
     static init(sequelize){
         return super.init(
             {
@@ -7,21 +7,24 @@ class GoodsConvert extends Model {
                     type: DataTypes.UUID,
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
+                },
+                groupName:{
+                    type: DataTypes.STRING,
+                    comment: "团队群组名称"
                 }
             },
             { 
                 sequelize, 
                 freezeTableName: true,
-                modelName: 'GoodsConvert', 
-                comment: "团队商品兑换信息"
+
+                modelName: 'TeamGroup', 
+                comment: "团队群组"
             }
         )
     }
     static associate(models){
-        models.GoodsConvert.belongsTo(models.Team)
-        models.GoodsConvert.belongsTo(models.TeamGoods)
-        models.GoodsConvert.belongsTo(models.User)
+        models.TeamGroup.belongsTo(models.Team)
     }
 }
 
-module.exports = GoodsConvert
+module.exports = TeamGroup

@@ -24,8 +24,6 @@ class TeamMemberScore extends Model {
             { 
                 sequelize, 
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'TeamMemberScore', 
                 comment: "团队成员积分记录信息"
             }

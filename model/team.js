@@ -8,7 +8,7 @@ class Team extends Model {
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
                 },
-                teamname:{
+                teamName:{
                     type: DataTypes.STRING,
                     allowNull: false,
                     comment: '团队名'
@@ -27,8 +27,6 @@ class Team extends Model {
             { 
                 sequelize, 
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'Team', 
                 comment: "团队信息"
             }

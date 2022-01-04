@@ -8,7 +8,7 @@ class UserInfo extends Model {
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
                 },
-                nickname:{
+                nickName:{
                     type: DataTypes.STRING,
                     allowNull: false,
                     comment: '用户昵称'
@@ -27,14 +27,12 @@ class UserInfo extends Model {
                     type: DataTypes.INTEGER,
                     allowNull: false,
                     defaultValue: 0,
-                    comment: '第三方标识'
+                    comment: '第三方标识 0没有'
                 }
             },
             { 
                 sequelize,
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'UserInfo', 
                 comment: "用户详细信息"
             }

@@ -1,5 +1,8 @@
 const Koa = require('koa')
-const app = new Koa()
+const app = new Koa({
+  proxy:true,
+  maxIpsCount:0
+})
 const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
@@ -12,6 +15,12 @@ const routerResponse = require('./middleware/routerResponse')
 const composeRouter = require('./middleware/composeRouter')
 //校验参数
 const datalizeVerify = require('./middleware/datalizeVerify')
+
+app.use(async (ctx, next) => {
+  const { ip, url } = ctx.request
+  console.log(ip,url)
+  await next()
+})
 
 // error handler
 onerror(app)

@@ -8,11 +8,11 @@ class TeamActivityRule extends Model {
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
                 },
-                activityfrequency:{
+                activityFrequency:{
                     type: DataTypes.INTEGER,
                     comment: "团队活动打卡次数"
                 },
-                activityrule:{
+                activityRule:{
                     type: DataTypes.STRING,
                     comment: "团队活动规则描述"
                 },
@@ -20,8 +20,6 @@ class TeamActivityRule extends Model {
             { 
                 sequelize, 
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'TeamActivityRule', 
                 comment: "团队活动"
             }

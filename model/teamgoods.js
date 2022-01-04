@@ -8,22 +8,22 @@ class TeamGoods extends Model {
                     defaultValue: Sequelize.UUIDV4,
                     primaryKey: true
                 },
-                goodsname:{
+                goodsName:{
                     type: DataTypes.STRING,
                     allowNull: false,
                     comment: '商品信息'
                 },
-                goodspicture:{
+                goodsPicture:{
                     type: DataTypes.STRING,
                     allowNull: false,
                     comment: '商品照片'
                 },
-                goodstitle:{
+                goodsTitle:{
                     type: DataTypes.STRING,
                     allowNull: false,
                     comment: '商品标题'
                 },
-                goodsamount:{
+                goodsAmount:{
                     type: DataTypes.INTEGER,
                     allowNull: false,
                     comment: '商品数量'
@@ -37,8 +37,6 @@ class TeamGoods extends Model {
             { 
                 sequelize, 
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'TeamGoods', 
                 comment: "团队商品信息"
             }

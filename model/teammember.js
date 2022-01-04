@@ -18,8 +18,6 @@ class TeamMember extends Model {
             { 
                 sequelize, 
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'TeamMember', 
                 comment: "团队成员"
             }

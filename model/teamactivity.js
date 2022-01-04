@@ -29,8 +29,6 @@ class TeamActivity extends Model {
             { 
                 sequelize, 
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'TeamActivity', 
                 comment: "团队活动"
             }

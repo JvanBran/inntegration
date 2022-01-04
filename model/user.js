@@ -21,27 +21,23 @@ class User extends Model {
                 userStatus:{
                     type: DataTypes.INTEGER,
                     allowNull: false,
-                    defaultValue: 0,
-                    comment: '账号状态'
+                    defaultValue: 1,
+                    comment: '账号状态 0禁用 1启用'
                 },
                 wxOpenId:{
                     type: DataTypes.STRING,
-                    allowNull: false,
-                    defaultValue: 0,
+                    allowNull: true,
                     comment: '微信openid'
                 },
                 wxUnionId:{
                     type: DataTypes.STRING,
-                    allowNull: false,
-                    defaultValue: 0,
+                    allowNull: true,
                     comment: '微信unionId'
                 }
             },
             { 
                 sequelize, 
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'User', 
                 comment: "用户信息"
             }

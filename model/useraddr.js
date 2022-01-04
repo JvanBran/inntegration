@@ -42,8 +42,6 @@ class UserAddr extends Model {
             { 
                 sequelize, 
                 freezeTableName: true,
-                timestamps: true,
-                paranoid: true,
                 modelName: 'UserAddr', 
                 comment: "用户地址信息"
             }
