@@ -20,6 +20,8 @@ const sequelize = new Sequelize('integration','root','123456',{
     define: {
         timestamps: true,
         paranoid: true,
+        charset: 'utf8',
+        collate: 'utf8_general_ci', 
         createdAt:'created_at',
         updatedAt:'updated_at',
         deletedAt:'deleted_at',
